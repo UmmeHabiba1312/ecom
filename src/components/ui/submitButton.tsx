@@ -1,14 +1,14 @@
-"use client"
+"use client";
 
 import React from "react";
 import { Button } from "./button";
 import { useFormStatus } from "react-dom";
 
-interface submitButtonProps {
+interface SubmitButtonProps {
     children: React.ReactNode;
 }
 
-const submitButton: React.FC<submitButtonProps> = ({ children }) => {
+const SubmitButton: React.FC<SubmitButtonProps> = ({ children }) => {
     const { pending } = useFormStatus();
 
     return (
@@ -22,4 +22,4 @@ const submitButton: React.FC<submitButtonProps> = ({ children }) => {
     );
 };
 
-export default submitButton;
+export default SubmitButton;
