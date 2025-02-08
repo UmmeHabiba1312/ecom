@@ -3,7 +3,7 @@
 
 import { redirect } from "next/navigation";
 import { BACKEND_URL } from "./constants";
-import { FormState, signupFormSchema } from "./type";
+import { FormState, loginFormSchema, signupFormSchema } from "./type";
 
 export async function signUp(state: FormState | null, formData: FormData): Promise<FormState | void> {
     console.log("Received Form Data:", formData.get("username"), formData.get("email"), formData.get("password"));
@@ -57,6 +57,75 @@ export async function signUp(state: FormState | null, formData: FormData): Promi
         return { error: { message: "Something went wrong. Please try again later." } };
     }
 }
+
+export async function logIn(state: FormState, formData: FormData): Promise<FormState> {
+    // Fix: Correct parameter name
+    const validationFields = loginFormSchema.safeParse({
+        email: formData.get("email"),
+        password: formData.get("password"),
+    });
+
+    // Fix: Handle validation results properly
+    if (!validationFields.success) {
+        return {
+            error: validationFields.error.flatten().fieldErrors,
+        };
+    }
+
+    const response = await fetch(`${BACKEND_URL}/auth/login`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(validationFields.data), // Send validated data
+    });
+    if (response.ok) {
+        const results = await response.json();
+        console.log({ results });
+
+    } else {
+        return {
+            message: response.status === 401 ? "Invaled Password" : response.statusText
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // old code 
 
