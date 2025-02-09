@@ -4,6 +4,7 @@
 import { redirect } from "next/navigation";
 import { BACKEND_URL } from "./constants";
 import { FormState, loginFormSchema, signupFormSchema } from "./type";
+import { createSession } from "./session";
 
 export async function signUp(state: FormState | null, formData: FormData): Promise<FormState | void> {
     console.log("Received Form Data:", formData.get("username"), formData.get("email"), formData.get("password"));
@@ -80,8 +81,19 @@ export async function logIn(state: FormState, formData: FormData): Promise<FormS
         body: JSON.stringify(validationFields.data), // Send validated data
     });
     if (response.ok) {
+        //sign done
         const results = await response.json();
         console.log({ results });
+        //create session for auth user
+        await createSession(
+            {
+                user: {
+                    id: results.id,
+                    username: results.username,
+                }
+            }
+        )
+        redirect("/")
 
     } else {
         return {
