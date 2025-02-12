@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import SubmitForm from "../../../components/ui/submitButton";
 import { signUp } from "@/lib/auth";
 import { FormState } from "@/lib/type";
+import { FcGoogle } from "react-icons/fc";
 
 const SignupForm = () => {
     const [state, setState] = useState<FormState | undefined>(undefined);
@@ -22,7 +23,7 @@ const SignupForm = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="space-y-4 bg-white p-6 rounded-lg shadow-md w-96">
+        <form onSubmit={handleSubmit} className="space-y-4 bg-white  w-full h-auto">
             {state?.error?.message && (
                 <p className="text-sm bg-red-500 text-white p-2 rounded">
                     {state.error.message}
@@ -72,7 +73,7 @@ const SignupForm = () => {
                     name="password"
                     type="password"
                     placeholder="Enter your password"
-                    className="w-full mt-1 px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                   className="w-full mt-1 px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                 />
                 {state?.error?.password && (
                     <div className="text-sm text-red-500">
@@ -88,6 +89,13 @@ const SignupForm = () => {
 
             {/* Submit Button */}
             <SubmitForm>Sign Up</SubmitForm>
+             <a
+                    href="/"
+                    className="flex items-center justify-center gap-2 text-sm bg-blue-500 text-white py-2 w-full rounded-md hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    <FcGoogle className="text-xl" />
+                    Continue With Google
+                  </a>
         </form>
     );
 };

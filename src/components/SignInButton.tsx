@@ -7,7 +7,7 @@ const SignInButton = async () => {
 
     if (!session || !session.user) {
         return (
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-2 sm:space-x-4">
                 <Link href="auth/login" className="px-4 py-2 bg-blue-600 hover:bg-blue-700 transition rounded-lg text-white">
                     Login
                 </Link>
