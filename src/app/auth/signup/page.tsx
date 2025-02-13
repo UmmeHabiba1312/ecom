@@ -4,7 +4,7 @@ import SignupForm from "./signupForm";
 import Image from "next/image";
 const Signup = () => {
     return (
-        <div className="flex flex-col sm:flex-row justify-center items-center h-auto bg-gray-100 px-4 py-8  max-w-screen-2xl">
+        <div className="flex flex-col sm:flex-row justify-center items-center h-auto bg-white px-4 py-8  max-w-screen-2xl">
 
 <div className="w-full sm:w-[65%] h-auto flex justify-center  items-center mb-8 sm:mb-0">
                             <Image 

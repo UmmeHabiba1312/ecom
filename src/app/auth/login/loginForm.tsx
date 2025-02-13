@@ -6,7 +6,7 @@ import { Label } from '@/components/ui/label'
 import SubmitButton from '@/components/ui/submitButton'
 import { logIn } from '@/lib/auth'
 import { FcGoogle } from 'react-icons/fc'
-
+import Link from 'next/link'
 const LoginForm = () => {
   const [state, action] = React.useActionState(logIn, undefined)
   return (
@@ -56,9 +56,9 @@ const LoginForm = () => {
 
       {/* Forgot Password Link */}
       <div className="text-right">
-        <a href="#" className="text-sm text-blue-500 hover:underline">
+        <Link href="#" className="text-sm text-blue-500 hover:underline">
           Forgot password?
-        </a>
+        </Link>
       </div>
 
       {/* Submit Button */}

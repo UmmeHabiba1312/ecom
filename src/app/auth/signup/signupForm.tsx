@@ -8,7 +8,7 @@ import SubmitForm from "../../../components/ui/submitButton";
 import { signUp } from "@/lib/auth";
 import { FormState } from "@/lib/type";
 import { FcGoogle } from "react-icons/fc";
-
+import Link from 'next/link'
 const SignupForm = () => {
     const [state, setState] = useState<FormState | undefined>(undefined);
 
@@ -89,13 +89,13 @@ const SignupForm = () => {
 
             {/* Submit Button */}
             <SubmitForm>Sign Up</SubmitForm>
-             <a
+             <Link
                     href="/"
                     className="flex items-center justify-center gap-2 text-sm bg-blue-500 text-white py-2 w-full rounded-md hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     <FcGoogle className="text-xl" />
                     Continue With Google
-                  </a>
+                  </Link>
         </form>
     );
 };
