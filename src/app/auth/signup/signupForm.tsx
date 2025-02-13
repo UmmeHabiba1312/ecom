@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState } from "react";
@@ -79,7 +78,7 @@ const SignupForm = () => {
                     <div className="text-sm text-red-500">
                         <p>Password must be:</p>
                         <ul className="list-disc pl-5">
-                            {state.error.password.map((error: any, index: number) => (
+                            {state.error.password.map((error: string, index: number) => (
                                 <li key={index}>{error}</li>
                             ))}
                         </ul>
@@ -91,7 +90,7 @@ const SignupForm = () => {
             <SubmitForm>Sign Up</SubmitForm>
              <Link
                     href="/"
-                    className="flex items-center justify-center gap-2 text-sm bg-blue-500 text-white py-2 w-full rounded-md hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="flex items-center justify-center gap-2 text-sm bg-blue-700 text-white py-2 w-full rounded-md hover:bg-blue-600 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     <FcGoogle className="text-xl" />
                     Continue With Google

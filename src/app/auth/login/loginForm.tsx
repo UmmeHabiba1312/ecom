@@ -64,13 +64,13 @@ const LoginForm = () => {
       {/* Submit Button */}
       <SubmitButton>Sign in</SubmitButton>
 
-      <a
+      <Link
         href="/"
-        className="flex items-center justify-center gap-2 text-sm bg-blue-500 text-white py-2 w-full  rounded-md hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
+        className="flex items-center justify-center gap-2 text-sm bg-blue-700 text-white py-2 w-full  rounded-md hover:bg-blue-600 disabled:opacity-50 disabled:cursor-not-allowed"
       >
         <FcGoogle className="text-xl" />
         Continue With Google
-      </a>
+      </Link>
     </form>
   )
 }
