@@ -47,7 +47,7 @@ const LoginForm = () => {
         <div className="text-sm text-red-500">
           <p>Password must be:</p>
           <ul className="list-disc pl-5">
-            {state.error.password.map((error: any, index: number) => (
+            {state.error.password.map((error: string, index: number) => (
               <li key={index}>{error}</li>
             ))}
           </ul>
