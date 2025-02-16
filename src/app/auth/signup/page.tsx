@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 const Signup = () => {
     return (
-        <div className="flex justify-center items-center h-auto px-5 sm:px-10 md:px-6 py-8 sm:py-8">
+        <div className="flex justify-center items-center h-auto px-5 sm:px-10 md:px-6 py-8 sm:py-8 mt-6 sm:mt-3">
             {/* Wrapper with equal height */}
             <motion.div
                 initial={{ opacity: 0, y: 50 }}
