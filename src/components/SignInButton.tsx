@@ -8,10 +8,10 @@ const SignInButton = async () => {
     if (!session || !session.user) {
         return (
             <div className="flex items-center space-x-2 sm:space-x-4">
-                <Link href="auth/login" className="px-4 py-2 bg-blue-600 hover:bg-blue-700 transition rounded-lg text-white">
+                <Link href="/login" className="px-4 py-2 bg-blue-600 hover:bg-blue-700 transition rounded-lg text-white">
                     Login
                 </Link>
-                <Link href="auth/signup" className="px-4 py-2 bg-green-600 hover:bg-green-700 transition rounded-lg text-white">
+                <Link href="/signup" className="px-4 py-2 bg-green-600 hover:bg-green-700 transition rounded-lg text-white">
                     Sign up
                 </Link>
             </div>
