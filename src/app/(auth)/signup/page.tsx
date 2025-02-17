@@ -43,7 +43,7 @@ const Signup = () => {
                         Create an Account
                     </h2>
                     <SignupForm />
-                    <p className="text-center tracking-wide text-gray-600 text-sm mt-4 p-6 rounded-lg border-[1px] border-gray-300 w-full">
+                    <p className="text-center tracking-wide text-gray-600 text-sm mt-4 p-6 rounded-lg border-[1px] border-gray-200 w-full">
                         Already have an account?{" "}
                         <Link href="/auth/login" className="text-blue-500 font-semibold hover:underline">
                             Log in
